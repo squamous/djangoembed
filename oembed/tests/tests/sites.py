@@ -1,5 +1,8 @@
-from django.utils import simplejson
-
+try:
+    from django.utils import simplejson
+except ImportError:
+    import simplejson
+    
 import oembed
 from oembed.exceptions import AlreadyRegistered, NotRegistered, OEmbedMissingEndpoint
 from oembed.models import StoredProvider, StoredOEmbed
