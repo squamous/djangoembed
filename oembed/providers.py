@@ -21,7 +21,10 @@ from django.db.models.fields import DateTimeField, DateField
 from django.db.models.fields.files import ImageField, ImageFieldFile
 from django.template import RequestContext, Context
 from django.template.loader import render_to_string, get_template
-from django.utils import simplejson
+try:
+    from django.utils import simplejson
+except ImportError:
+    import simplejson
 
 from oembed.constants import OEMBED_ALLOWED_SIZES, OEMBED_THUMBNAIL_SIZE
 from oembed.exceptions import OEmbedException, OEmbedHTTPException
